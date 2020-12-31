@@ -3,13 +3,13 @@ export default class QuestionView {
         this.parent = parent;
         this.answerHandler = answerHandler;
         this.type = type
-        this.questionText = this.getQuestionText(type)
+        this.questionText = `Question: ${this.getQuestionText(type)}`
     }
 
     getQuestionText(type) {
         switch (type) {
             case 'people':
-                return 'Who is that character?';
+                return 'Who is this character?';
             case 'vehicles':
                 return 'What vehicle is that?';
             case 'starships':
@@ -39,21 +39,24 @@ export default class QuestionView {
     display(answers) {
         const shuffledAnswers = this.shuffleAnswers(answers)
         const questionWrapper = this.createElement('div', 'question__wrapper');
-        const currentQuestionImage = this.createElement('img', 'question__image');
-        const currentQuestionText = this.createElement('h1', 'question__text');
-        const currentAnswersList = this.createElement('div', 'answers__list');
+        const questionImage = this.createElement('img', 'question__image');
+        const questionContainer = this.createElement('div', 'question__container');
+        const questionText = this.createElement('h1', 'question__text');
+        const answersList = this.createElement('div', 'answers__list');
         shuffledAnswers.forEach(answer => {
-            const answerButton = this.createElement('button', 'answer__button');
+            const answerButton = this.createElement('button', 'answer__btn');
             answerButton.innerText = answer[1];
-            currentAnswersList.appendChild(answerButton)
+            answerButton.classList.add('btn')
+            answersList.appendChild(answerButton)
 
         });
-        currentQuestionText.innerText = this.questionText
-        currentQuestionImage.src = `./static/assets/img/modes/${this.type}/${answers[0][0]}.jpg`;
+        questionText.innerText = this.questionText
+        questionImage.src = `./static/assets/img/modes/${this.type}/${answers[0][0]}.jpg`;
         this.parent.appendChild(questionWrapper)
-        questionWrapper.appendChild(currentQuestionImage)
-        questionWrapper.appendChild(currentQuestionText)
-        questionWrapper.appendChild(currentAnswersList)
+        questionWrapper.appendChild(questionImage)
+        questionWrapper.appendChild(questionContainer)
+        questionContainer.appendChild(questionText)
+        questionContainer.appendChild(answersList)
     }
 
 }

@@ -52,9 +52,9 @@ export default class QuestionView {
         });
         questionText.innerText = this.questionText
         questionImage.src = `./static/assets/img/modes/${this.type}/${answers[0][0]}.jpg`;
-        this.parent.appendChild(questionWrapper)
-        questionWrapper.appendChild(questionImage)
-        questionWrapper.appendChild(questionContainer)
+        // this.parent.appendChild(questionWrapper)
+        this.parent.appendChild(questionImage)
+        this.parent.appendChild(questionContainer)
         questionContainer.appendChild(questionText)
         questionContainer.appendChild(answersList)
     }

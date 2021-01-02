@@ -5,7 +5,8 @@ export default class QuestionModel {
   }
   async fetchData() {
     let data = await fetch(`https://swapi.dev/api/${this.type}/${this.id}/`)
-      .then((response) => response.json()).catch(error => console.log(error));
+      .then((response) => response.json())
+      .catch(error => console.log(error));
     this.answers = [
       [this.id, data.name]
     ];
@@ -22,6 +23,31 @@ export default class QuestionModel {
         .catch(error => console.log(error));
 
       this.answers.push([currentId, currentName]);
+    }
+    return this.answers;
+  }
+  getType(type) {
+    return this.type;
+  }
+  getAnswers() {
+    return this.fetchData();
+  }
+  async getCorrectAnswer() {
+    let answers = await this.getAnswers();
+    return answers[0];
+  }
+  selectAnswer(id) {
+    this.userAnswer = id;
+    return this.userAnswer;
+  }
+  async answersCorrect(id) {
+    let correctId = await this.getCorrectAnswer();
+    if(this.selectAnswer(id)=== correctId[0]){
+      return true;
+
+    }
+    else{
+      return false;
     }
   }
 }

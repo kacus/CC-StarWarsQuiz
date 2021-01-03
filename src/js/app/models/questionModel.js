@@ -30,24 +30,15 @@ export default class QuestionModel {
     return this.type;
   }
   getAnswers() {
-    return this.fetchData();
+    return this.answers;
   }
-  async getCorrectAnswer() {
-    let answers = await this.getAnswers();
-    return answers[0];
+  getCorrectAnswer() {
+    return this.answers[0];
   }
   selectAnswer(id) {
     this.userAnswer = id;
-    return this.userAnswer;
   }
-  async answersCorrect(id) {
-    let correctId = await this.getCorrectAnswer();
-    if(this.selectAnswer(id)=== correctId[0]){
-      return true;
-
-    }
-    else{
-      return false;
-    }
+  answersCorrect() {
+    return this.userAnswer === this.answers[0][0];
   }
 }

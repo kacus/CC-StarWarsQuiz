@@ -33,6 +33,6 @@ class LightsaberTimerView {
 
         this.countingDown.textContent = `Time left: ${minutes}m ${seconds}s`
 
-        this.pathLightsaber.style.width = `(${timeLeft}*100/${maxTime})px`
+        this.pathLightsaber.style.width = `(${timeLeft}*100/${maxTime})%`
     }
 }

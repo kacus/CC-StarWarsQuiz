@@ -38,7 +38,7 @@ export default class QuestionModel {
   selectAnswer(id) {
     this.userAnswer = id;
   }
-  answersCorrect() {
+  answerIsCorrect() {
     return this.userAnswer === this.answers[0][0];
   }
 }

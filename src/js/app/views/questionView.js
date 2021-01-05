@@ -55,6 +55,7 @@ export default class QuestionView {
     });
     questionText.innerText = this.questionText;
     questionImage.src = `./static/assets/img/modes/${this.type}/${answers[0][0]}.jpg`;
+    this.parent.innerHTML = "";
     this.parent.appendChild(questionImage);
     this.parent.appendChild(questionContainer);
     questionContainer.appendChild(questionText);

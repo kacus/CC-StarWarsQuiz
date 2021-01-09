@@ -1,7 +1,6 @@
 export default class MenuView{
     constructor(parent, typeSelectionHandler){
-        this.parent = parent //document.getElementById('swquiz-app'); //testing!!!!
-        this.categories = ['people', 'vehicles', 'starships'];
+        this.parent = parent;
         this.typeSelectionHandler = typeSelectionHandler;
     }
     createElement(tag, className) {
@@ -19,11 +18,6 @@ export default class MenuView{
             menuBtn.addEventListener('click', () => this.typeSelectionHandler(cat));
             menuContainer.appendChild(menuBtn);
         });
-        this.parent.innerHTML = "";
         this.parent.appendChild(menuContainer);
     }
 }
-// MOCKUP FOR TESTING - move it to controller
-// export function typeSelectionHandler(param) {
-//     console.log(`selected category: ${param}`);
-// }

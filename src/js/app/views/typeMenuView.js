@@ -11,7 +11,7 @@ export default class MenuView{
         return element;
     }
     display(){
-        const menuContainer = this.createElement('div', 'menu__container');
+        const menuContainer = this.createElement('div', 'menu');
         this.categories.forEach((cat) => {
             const menuBtn = this.createElement('button', 'menu__button');
             menuBtn.innerText = cat;

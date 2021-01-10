@@ -3,8 +3,9 @@ export default class QuestionModel {
     this.type = type;
     this.id = id;
   }
-  async fetchData() {
-    let data = await fetch(`https://swapi.dev/api/${this.type}/${this.id}/`)
+  async fetchData(api_url) {
+    console.log(`${api_url}/${this.type}/${this.id}/`);
+    let data = await fetch(`${api_url}/${this.type}/${this.id}/`)
       .then((response) => response.json())
       .catch(error => console.log(error));
     this.answers = [
@@ -17,7 +18,7 @@ export default class QuestionModel {
         currentId = Math.floor(Math.random() * maxIdRange) + 1;
       }
 
-      let currentName = await fetch(`https://swapi.dev/api/${this.type}/${currentId}/`)
+      let currentName = await fetch(`${api_url}/${this.type}/${currentId}/`)
         .then((response) => response.json())
         .then((data) => data.name)
         .catch(error => console.log(error));
@@ -26,6 +27,7 @@ export default class QuestionModel {
     }
     return this.answers;
   }
+
   getType(type) {
     return this.type;
   }

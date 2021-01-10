@@ -2,11 +2,13 @@ import QuestionView from '../views/questionView';
 import QuestionModel from '../models/questionModel';
 
 export default class QuizController {
-    constructor(gameTime, quizType, gameOverHandler) {
+    constructor(gameTime, quizType, gameOverHandler, api_url) {
         this.gameTime = gameTime;
         this.quizType = quizType;
         this.gameOverHandler = gameOverHandler;
         this.timeLeft = this.gameTime;
+        this.api_url = api_url;
+
 
         this.currentQuestion = null;
         this.questions = [];
@@ -43,7 +45,7 @@ export default class QuizController {
 
         // make question
         this.currentQuestion = new QuestionModel(this.quizType, generatedId);
-        await this.currentQuestion.fetchData();
+        await this.currentQuestion.fetchData(this.api_url);
         this.questions.push(this.currentQuestion);
         
         // display question

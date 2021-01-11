@@ -1,6 +1,6 @@
 export default class MenuView{
     constructor(parent, typeSelectionHandler){
-        this.parent = document.getElementById('swquiz-app');//parent;
+        this.parent = parent;
         this.typeSelectionHandler = typeSelectionHandler;
         this.categories = ['people', 'vehicles', 'starships'];
     }

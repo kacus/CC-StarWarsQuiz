@@ -2,13 +2,13 @@ import QuestionView from '../views/questionView';
 import QuestionModel from '../models/questionModel';
 
 export default class QuizController {
-    constructor(gameTime, quizType, gameOverHandler, api_url) {
+    constructor(gameTime, quizType, gameOverHandler, api_url, cachedIds) {
         this.gameTime = gameTime;
         this.quizType = quizType;
         this.gameOverHandler = gameOverHandler;
         this.timeLeft = this.gameTime;
         this.api_url = api_url;
-
+        this.validIds = cachedIds[this.quizType];
 
         this.currentQuestion = null;
         this.questions = [];
@@ -36,16 +36,16 @@ export default class QuizController {
 
     async generateQuestion() {
         // generate id
-        const maxIdRange = 50
-        let generatedId = Math.floor(Math.random() * maxIdRange) + 1;
+        const maxIdRange = this.validIds.length;
+        let generatedId = this.validIds[Math.floor(Math.random() * maxIdRange)];
         while (this.usedIds.includes(generatedId)) {
-            generatedId = Math.floor(Math.random() * maxIdRange) + 1;
+            generatedId = this.validIds[Math.floor(Math.random() * maxIdRange)];
         }
         this.usedIds.push(generatedId);
 
         // make question
         this.currentQuestion = new QuestionModel(this.quizType, generatedId);
-        await this.currentQuestion.fetchData(this.api_url);
+        await this.currentQuestion.fetchData(this.api_url, this.validIds);
         this.questions.push(this.currentQuestion);
         
         // display question

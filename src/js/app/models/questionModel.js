@@ -3,25 +3,29 @@ export default class QuestionModel {
     this.type = type;
     this.id = id;
   }
-  async fetchData(api_url) {
-    console.log(`${api_url}/${this.type}/${this.id}/`);
+  async fetchData(api_url, validIds) {
+    //catch correct answer
     let data = await fetch(`${api_url}/${this.type}/${this.id}/`)
       .then((response) => response.json())
-      .catch(error => console.log(error));
+      .catch(_ => console.log('invalid id: ', currentId));
     this.answers = [
       [this.id, data.name]
     ];
-    const maxIdRange = 50;
+
+    //catch rest of answers
+    const maxIdRange = validIds.length;
     for (let i = 0; i < 3; i++) {
-      let currentId = Math.floor(Math.random() * maxIdRange) + 1;
+      let currentName;
+      let currentId;
+      currentId = validIds[Math.floor(Math.random() * maxIdRange)];
       while (this.answers.some((x) => x[0] === currentId)) {
-        currentId = Math.floor(Math.random() * maxIdRange) + 1;
+        currentId = validIds[Math.floor(Math.random() * maxIdRange)];
       }
 
-      let currentName = await fetch(`${api_url}/${this.type}/${currentId}/`)
+      currentName = await fetch(`${api_url}/${this.type}/${currentId}/`)
         .then((response) => response.json())
         .then((data) => data.name)
-        .catch(error => console.log(error));
+        .catch(_ => console.log('invalid id: ', currentId));
 
       this.answers.push([currentId, currentName]);
     }

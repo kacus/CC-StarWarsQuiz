@@ -17,13 +17,14 @@ body {
     border-radius: 16px;
 }
 .menu__button{
+    background-color: #fff;
     border: none;
     font-style: normal;
     font-weight: 600;
     font-size: 2rem;
     text-transform: capitalize;
 }
-.menu__button:active{
+.menu__button:focus{
     padding-bottom: .5rem;
     border-bottom: 6px solid rgba(255,0,0,.5);
     border-radius: 4px;

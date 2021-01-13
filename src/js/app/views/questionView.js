@@ -4,6 +4,8 @@ export default class QuestionView {
     this.answerHandler = answerHandler;
     this.type = type;
     this.questionText = `Question: ${this.getQuestionText(type)}`;
+    this.questionContainer = document.createElement('div');
+    this.questionContainer.classList.add('question');
   }
 
   getQuestionText(type) {
@@ -40,10 +42,19 @@ export default class QuestionView {
 
   display(answers) {
     const shuffledAnswers = this.shuffleAnswers(answers);
+
+    const question = this.createElement('div', 'question');
+
     const questionImage = this.createElement('img', 'question__image');
+    questionImage.src = `./static/assets/img/modes/${this.type}/${answers[0][0]}.jpg`;
+
     const questionContainer = this.createElement('div', 'question__container');
+
     const questionText = this.createElement('h1', 'question__text');
+    questionText.innerText = this.questionText;
+    
     const answersList = this.createElement('div', 'answers__list');
+
     shuffledAnswers.forEach((answer) => {
       const answerButton = this.createElement('button', 'answer__btn');
       answerButton.innerText = answer[1];
@@ -53,8 +64,8 @@ export default class QuestionView {
       );
       answersList.appendChild(answerButton);
     });
-    questionText.innerText = this.questionText;
-    questionImage.src = `./static/assets/img/modes/${this.type}/${answers[0][0]}.jpg`;
+
+    
     this.parent.innerHTML = "";
     this.parent.appendChild(questionImage);
     this.parent.appendChild(questionContainer);

@@ -16,7 +16,7 @@ export default class GameOverView {
 
     display() {
         const formContainer = this.createElement('div', 'form__container');
-        const nameForm = this.createElement('form', 'name__form');
+        const nameForm = this.createElement('div', 'name__form');
         const insertName = this.createElement('input', 'insert__name');
         insertName.type = 'text';
         insertName.setAttribute('maxlength', '20');
@@ -25,11 +25,9 @@ export default class GameOverView {
         submitButton.innerText = 'MAY THE FORCE BE WITH YOU!';
         submitButton.addEventListener('click', () => {
             let providedName = insertName.value;
-            this.submitNameHandler(providedName)
+            this.submitNameHandler(providedName);
         });
 
-
-      
         const headerContainer = this.createElement('div', 'header__container');
         const gameOverHeader = this.createElement('h2', 'gameover__header');
         gameOverHeader.innerText = "GAME OVER";
@@ -40,9 +38,6 @@ export default class GameOverView {
         const formHolder = this.createElement('div', 'form__holder');
         const provideNameText = this.createElement('h5', 'provideName__text');
         provideNameText.innerText = "Please fill your name in order to receive eternal glory in whole Galaxy!"
-
-
-    
 
         this.parent.appendChild(formContainer);
         formContainer.appendChild(headerContainer);

@@ -37,9 +37,9 @@ export default class GameController {
     }
 
     selectMode(mode) {
-        const quiz = new QuizController(this.gameTime, mode, this.gameMenu.bind(this), this.api_url, this.cachedValidIds);
+        this.quiz = new QuizController(this.gameTime, mode, this.gameMenu.bind(this), this.api_url, this.cachedValidIds);
         this.rootElement.innerHTML = '';
-        quiz.runQuiz();
+        this.quiz.runQuiz();
     }
 
     gameMenu() {

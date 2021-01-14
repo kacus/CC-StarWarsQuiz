@@ -6,3 +6,82 @@ html {
 body {
     font-size: 1.6rem;
 }
+
+.form__container{
+    display: flex;
+    width: 80%;
+    height: auto;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 14px 0px #FF0000;
+    flex-wrap: wrap;
+    font-weight: thin;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.header__container{
+    margin:10px;
+    /* justify-content: center; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.gameover__header{
+    /* margin: 10px 30px; */
+    width: 100%;
+    text-align: center;
+}
+.form__holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    text-align: center;
+}
+.providename__text{
+    width: 100%;
+    margin-left:auto;
+    margin-right: auto;
+    display: block;
+}
+.name__form{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    margin-left:auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+.submit__button{
+    background-color: #FF0000;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: #FF0000 solid 0px;
+    box-shadow: 0px 0px 10px 3px #FF0000;
+}
+.submit__button:hover{
+    box-shadow: 0px 0px 10px 5px #FF0000;
+    color: #FF0000;
+    background-color: #FFF;
+}
+.insert__name{
+    width: 212px;
+    height: 26px;
+    border: #BBB solid 2px;
+    border-radius: 5px;
+}
+.insert__name:focus{
+    box-shadow: 0px 0px 10px 3px #BBB;
+}

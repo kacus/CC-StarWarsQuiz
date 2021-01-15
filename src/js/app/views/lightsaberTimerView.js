@@ -9,24 +9,27 @@ class LightsaberTimerView {
         return element;
     }
 
-    display(timeLeft, maxTime) {
+    display() {
         //create box 
-        this.timerView = this.createElement('div','TimerView');
-        //create lightsaber 
+        this.timerView = this.createElement('div','timerView');
+        //create box for lighsber and countingdown
+        this.lightsaberView = this.createElement('div','lightsaberView');
+        //create box for img 
+        this.imgLightsaberView = this.createElement('div','imgLightsaberView');
+        //create lightsaber path
         this.lightsaber = this.createElement('div','lightsaber');
-        //create progress and label
-        this.progress = this.createElement('progress');
-        this.setProgressAtributes(this.progress, timeLeft, maxTime);
-        this.progress.id = "lightsaberTimer";
-        this.label = this.createElement('label');
-        this.label.setAttribute('for', `lightsaberTimer`);
-        this.label.textContent = "Time left: ";
-        this.spanLabel = this.createElement('span');
-        this.label.append(this.spanLabel);
+        this.pathLightsaber = this.createElement('div', 'pathLightsaber')
 
-        this.timerView.append(this.lightsaber, this.progress, this. label);
+        this.lightsaber.append(this.pathLightsaber)
+        this.lightsaberView.append(this.imgLightsaberView, this.lightsaber)
+        //create countingdown div
+        this.countingDown = this.createElement('div', 'countingDown')
+        this.countingDown.textContent = "Time left: ";
+        this.spanCountingDown = this.createElement('span');
+        this.countingDown.append(this.spanCountingDown);
+
+        this.timerView.append(this.lightsaberView, this.countingDown);
         this.parent.append(this.timerView);
-        this.updateTime(timeLeft, maxTime);
     }
 
     updateTime(timeLeft, maxTime) {
@@ -35,14 +38,10 @@ class LightsaberTimerView {
 
         const minutes = Math.floor(timeLeft/60);
         const seconds = timeLeft - (minutes*60);
+        const newWidth = timeLeft*100/maxTime;
 
-        this.spanLabel.textContent = `${minutes}m ${seconds}s`;
-        this.setProgressAtributes(this.progress, timeLeft, maxTime);
-    }
-
-    setProgressAtributes(element, value, max) {
-        element.setAttribute('value', value);
-        element.setAttribute('max', max);
+        this.spanCountingDown.textContent = `${minutes}m ${seconds}s`;
+        this.pathLightsaber.style.width = `${newWidth}%`;
     }
 }
 

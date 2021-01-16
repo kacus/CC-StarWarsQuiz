@@ -2,7 +2,7 @@ export default class MenuView{
     constructor(parent, typeSelectionHandler){
         this.parent = parent;
         this.typeSelectionHandler = typeSelectionHandler;
-        this.categories = ['people', 'vehicles', 'starships']
+        this.categories = ['people', 'vehicles', 'starships'];
     }
     createElement(tag, className) {
         const element = document.createElement(tag);

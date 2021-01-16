@@ -14,14 +14,18 @@ class LightsaberTimerView {
         this.timerView = this.createElement('div','timerView');
         //create box for lighsber and countingdown
         this.lightsaberView = this.createElement('div','lightsaberView');
+        //create wraper for lightsaber 
+        this.lightsaberWraper = this.createElement('div','lightsaberWraper');
         //create box for img 
         this.imgLightsaberView = this.createElement('div','imgLightsaberView');
         //create lightsaber path
         this.lightsaber = this.createElement('div','lightsaber');
         this.pathLightsaber = this.createElement('div', 'pathLightsaber')
 
+        this.lightsaberWraper.append(this.lightsaber)
         this.lightsaber.append(this.pathLightsaber)
-        this.lightsaberView.append(this.imgLightsaberView, this.lightsaber)
+        this.lightsaberView.append(this.imgLightsaberView, this.lightsaberWraper)
+        
         //create countingdown div
         this.countingDown = this.createElement('div', 'countingDown')
         this.countingDown.textContent = "Time left: ";

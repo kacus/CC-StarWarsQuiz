@@ -20,7 +20,7 @@ export default class GameOverView {
         const insertName = this.createElement('input', 'insert__name');
         insertName.type = 'text';
         insertName.setAttribute('maxlength', '20');
-        insertName.setAttribute('pattern', '[a-zA-Z0-9]{3,20}');
+        insertName.setAttribute('pattern', '[a-zA-Z0-9 ]{3,20}');
         const submitButton = this.createElement('button', 'submit__button');
         submitButton.innerText = 'MAY THE FORCE BE WITH YOU!';
         submitButton.addEventListener('click', () => {

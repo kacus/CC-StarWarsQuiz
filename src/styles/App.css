@@ -153,7 +153,7 @@ body {
     text-transform: capitalize;
 }
 
-.menu__button:focus {
+.menu__button--clicked {
     padding-bottom: .5rem;
     border-bottom: 6px solid rgba(255, 0, 0, .5);
     border-radius: 4px;

@@ -12,9 +12,9 @@ export default class HallOfFameView {
 
   display() {
     //get highScores from localStorage
-    const highScores = !JSON.parse(localStorage.getItem('highScores'))
+    const highScores = !JSON.parse(localStorage.getItem('HighScores'))
       ? []
-      : JSON.parse(localStorage.getItem('highScores'));
+      : JSON.parse(localStorage.getItem('HighScores'));
 
     //create wrapper for hallOfFame
     const hofWrapper = this.createElement('div', 'hof__wrapper');

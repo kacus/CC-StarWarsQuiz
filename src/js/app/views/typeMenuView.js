@@ -1,3 +1,5 @@
+import HallOfFameView from '../views/hallOfFameView'
+
 export default class MenuView{
     constructor(parent, typeSelectionHandler){
         this.parent = parent;
@@ -58,6 +60,11 @@ export default class MenuView{
         const buttonContainer = this.createElement('div', 'buttonContainer')
         const hofButton = this.createElement('button', 'halloffame__button');
         hofButton.innerText = 'Hall of Fame';
+        hofButton.addEventListener('click', () => {
+            this.parent.innerHTML = "";
+            const hof = new HallOfFameView(this.parent);
+            hof.display();
+        });
         const startButton = this.createElement('button', 'start__button');
         startButton.innerText = 'Play the game';
         startButton.addEventListener('click', () => this.typeSelectionHandler(this.selectedCategory));

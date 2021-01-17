@@ -11,6 +11,17 @@ export default class MenuView{
                             {name: 'starships',
                             shortDesc: 'Do you recognize this starship?',
                             longDesc: 'You have one minute (1m) to answer as many questions as possible. During the game on each question you need to select which starship from Star Wars is showed on the left.'}];
+        this.selectedCategory = 'people';
+    }
+    toggleButton(btnElem, cat){
+        btnElem.classList.toggle('menu__button--clicked');
+
+        let shortDescElem = this.parent.getElementsByClassName('shortDesc');
+        let longDescElem = this.parent.getElementsByClassName('longDesc');
+        shortDescElem[0].innerText = cat.shortDesc;
+        longDescElem[0].innerHTML = cat.longDesc;
+        
+        this.selectedCategory = cat.name; 
     }
     createElement(tag, className) {
         const element = document.createElement(tag);
@@ -23,27 +34,30 @@ export default class MenuView{
         const mainContainer = this.createElement('div', 'main');
         const menuContainer = this.createElement('div', 'menu');
         this.categories.forEach((cat) => {
-            const menuBtn = this.createElement('button', 'menu__button');
+            const menuBtn = this.createElement('p', 'menu__button');
             menuBtn.innerText = cat.name;
-            menuBtn.addEventListener('click', () => this.typeSelectionHandler(cat.name));
+            menuBtn.addEventListener('click', () => this.toggleButton(menuBtn, cat));
             menuContainer.appendChild(menuBtn);
         });
-        const logoImgContainer = this.createElement('div', 'logoImg');
-        const logoImg = this.createElement('img');
-        logoImg.src ="src/styles/StarWarsLogo.png";
+        
+        const logoImgContainer = this.createElement('div', 'logo');
+        const logoImg = this.createElement('img', 'logo__img');
+        logoImg.src = "./static/assets/ui/StarWarsLogo.png";
         logoImg.alt = 'SW LOGO';
         logoImgContainer.appendChild(logoImg);
         const questionImg = this.createElement('div', 'question__image');
         const shortDesc = this.createElement('div', 'shortDesc');
-        shortDesc.innerText = this.categories[0].shortDesc; //MOCKUP!!!!
+        shortDesc.innerHTML = this.categories[0].shortDesc;
+        console.log(shortDesc);
         const longDesc = this.createElement('div', 'longDesc');
-        longDesc.innerText = this.categories[0].longDesc; //MOCKUP
+        longDesc.innerHTML = this.categories[0].longDesc;
 
         const buttonContainer = this.createElement('div', 'buttonContainer')
         const hofButton = this.createElement('button', 'halloffame__button');
         hofButton.innerText = 'Hall of Fame';
         const startButton = this.createElement('button', 'start__button');
         startButton.innerText = 'Play the game';
+        startButton.addEventListener('click', () => this.typeSelectionHandler(this.selectedCategory));
 
         buttonContainer.appendChild(hofButton);
         buttonContainer.appendChild(startButton);

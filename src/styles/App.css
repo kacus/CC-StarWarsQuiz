@@ -8,6 +8,9 @@ body {
     background-image: url("../static/assets/ui/QuizBackground.png");
 }
 
+/* .swquiz-app {
+    display: flex;
+} */
 
 .form__container {
     display: flex;
@@ -394,3 +397,59 @@ body {
     }
 
 }
+
+/* style for HalOfFame */
+
+.hof__wraper {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, .25), 4px 4px 40px rgba(3, 3, 3, 0.9);
+    padding: 1rem;
+    color: rgb(241, 2, 2);
+}
+
+table {
+    box-shadow: 0 0 20px 10px red;
+    border: 2px solid black;
+    width: 50%;
+}
+
+table, th, td {
+    /* align: center; */
+    background-color: #fff;
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    table-layout: auto;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+
+tr:nth-of-type(1) {
+    font-weight: bolder;
+    padding-right: 1rem !important;
+}
+
+tr:nth-of-type(1) .hof__table-cell:nth-of-type(3) {
+    text-align: center;
+}
+
+
+tr .hof__table-cell:nth-of-type(3) {
+    text-align: right; 
+}
+
+tr .hof__table-cell:nth-of-type(4) {
+    text-align: left;
+    padding-left: 0;
+    margin-left: 0;
+    white-space: nowrap;
+}
+

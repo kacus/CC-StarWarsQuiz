@@ -55,6 +55,12 @@ export default class QuestionView {
     
     const answersList = this.createElement('div', 'answers__list');
 
+
+    const imagesHolder = this.createElement('div', 'images__holder');
+    const quizHolder = this.createElement('div', 'quiz__holder');
+    const logoSw = this.createElement('img', 'logo__sw');
+    logoSw.src = './static/assets/ui/StarWarsLogo.png';  
+
     shuffledAnswers.forEach((answer) => {
       const answerButton = this.createElement('button', 'answer__btn');
       answerButton.innerText = answer[1];
@@ -65,11 +71,18 @@ export default class QuestionView {
       answersList.appendChild(answerButton);
     });
 
-    
+
+
+     
     this.parent.innerHTML = "";
-    this.parent.appendChild(questionImage);
-    this.parent.appendChild(questionContainer);
+    this.parent.appendChild(quizHolder);
+    quizHolder.appendChild(imagesHolder);
+    imagesHolder.appendChild(logoSw);
+    imagesHolder.appendChild(questionImage);
+    quizHolder.appendChild(questionContainer);
     questionContainer.appendChild(questionText);
     questionContainer.appendChild(answersList);
+
+    
   }
 }

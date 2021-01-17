@@ -25,6 +25,8 @@ export default class QuizController {
         this.questionContainer = document.createElement('div');
         this.questionContainer.classList.add('question');
         this.root.appendChild(this.questionContainer);
+
+        // this.root.prepend(this.questionContainer)
     }
 
     updateTime() {
@@ -67,7 +69,7 @@ export default class QuizController {
         // display question
         const questionView = new QuestionView(this.questionContainer, this.handleAnswer.bind(this), this.quizType);
         questionView.display(this.currentQuestion.getAnswers());
-        this.root.appendChild(this.questionContainer);
+        this.root.prepend(this.questionContainer)
     }
 
     async handleAnswer(id) {

@@ -5,7 +5,10 @@ html {
 
 body {
     font-size: 1.6rem;
+    background-image: url("../static/assets/ui/QuizBackground.png");
+    
 }
+
 
 .form__container{
     display: flex;
@@ -15,7 +18,8 @@ body {
     margin-right: auto;
     margin-top: 150px;
     border-radius: 5px;
-    box-shadow: 0px 0px 14px 0px #FF0000;
+    box-shadow: 0px 0px 14px 0px #FF0000; 
+    color: #fff;;
     flex-wrap: wrap;
     font-weight: thin;
     justify-content: space-around;
@@ -25,7 +29,6 @@ body {
 
 .header__container{
     margin:10px;
-    /* justify-content: center; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -33,7 +36,6 @@ body {
     text-align: center;
 }
 .gameover__header{
-    /* margin: 10px 30px; */
     width: 100%;
     text-align: center;
 }
@@ -113,7 +115,7 @@ body {
 }
 
 .timerView {
-    margin-top: 3%;
+    margin-top: 2%;
     height: 10rem;
     display: grid;
     justify-items: stretch;
@@ -200,4 +202,84 @@ body {
     .lightsaberWraper {
         height: 1.1rem;
     }
+}
+
+
+.quiz__holder{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    min-height: 700px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.images__holder{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width:20vw;
+    margin:20px;
+}
+.logo__sw{
+    width:100%;
+}
+.question__image{
+    width:100%;
+    
+    box-shadow: 0px 0px 14px 0px #FF0000;
+    
+}
+.question__container{    
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top:20%;    
+    place-items: center center;
+    margin:20px;
+}
+
+
+.question__text{
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    box-shadow: 0px 0px 14px 0px #FF0000;
+    border-radius: 5px;
+    align-self: center;
+    padding: 10px;
+    display:block;
+    background-color: #fff;
+    
+}
+.answers__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin-top:auto;
+    margin-bottom: auto;
+    justify-self: stretch;
+    
+}
+
+.btn{
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    height: 70px;
+    align-self: stretch;
+    justify-self: stretch;
+    width: 100%;
+}
+.btn:hover{
+    
+    box-shadow: 0px 0px 14px 0px #FF0000;
+}
+@media (max-width:700px) {
+    .images__holder{
+        justify-content: space-between;
+        width:50vw;
+    }
+
 }

@@ -11,7 +11,6 @@ export default class HallOfFameView {
   }
 
   display() {
-
     //get highScores from localStorage
     const highScores = !JSON.parse(localStorage.getItem('highScores'))
       ? []

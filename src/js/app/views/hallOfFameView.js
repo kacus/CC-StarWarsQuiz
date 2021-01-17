@@ -23,7 +23,7 @@ export default class HallOfFameView {
     if (highScores.length > 0) {
       //create table elements
       const hofTable = this.createElement('table', 'hof__table');
-      const hofTableHeading = this.createElement('thead', 'hof__table-heading');
+      const hofTableHeading = this.createElement('caption', 'hof__table-heading');
       const hofTableRow = this.createElement('tr', 'hof__table-row');
       const titles = ['place', 'name', 'result'];
 
@@ -34,9 +34,10 @@ export default class HallOfFameView {
 
       //create row with column titles
       hofTable.appendChild(hofTableRow);
-      titles.forEach((title) => {
+      titles.forEach((title, index) => {
         const hofTableCell = this.createElement('td', 'hof__table-cell');
         hofTableRow.appendChild(hofTableCell);
+        index === 2 ? hofTableCell.colSpan = "2" : null;
         hofTableCell.innerText = title;
       });
 

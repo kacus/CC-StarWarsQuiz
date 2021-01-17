@@ -14,8 +14,9 @@ export default class MenuView{
         this.selectedCategory = 'people';
     }
     toggleButton(btnElem, cat){
+        const resetBtns = this.parent.getElementsByClassName('menu__button menu__button--clicked');
+        resetBtns[0].classList.remove('menu__button--clicked');
         btnElem.classList.toggle('menu__button--clicked');
-
         let shortDescElem = this.parent.getElementsByClassName('shortDesc');
         let longDescElem = this.parent.getElementsByClassName('longDesc');
         shortDescElem[0].innerText = cat.shortDesc;
@@ -35,11 +36,13 @@ export default class MenuView{
         const menuContainer = this.createElement('div', 'menu');
         this.categories.forEach((cat) => {
             const menuBtn = this.createElement('p', 'menu__button');
+            if(cat.name === 'people'){
+                menuBtn.classList.add('menu__button--clicked')
+            }
             menuBtn.innerText = cat.name;
             menuBtn.addEventListener('click', () => this.toggleButton(menuBtn, cat));
             menuContainer.appendChild(menuBtn);
         });
-        
         const logoImgContainer = this.createElement('div', 'logo');
         const logoImg = this.createElement('img', 'logo__img');
         logoImg.src = "./static/assets/ui/StarWarsLogo.png";

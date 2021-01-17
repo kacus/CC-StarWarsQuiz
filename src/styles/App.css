@@ -150,7 +150,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    background-color: #fff;
     font-size: 4rem;
     font-weight: 600;
     box-sizing: border-box;
@@ -164,7 +164,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    
+    background-color: #fff;
     box-sizing: border-box;
     padding: 2rem;
     box-shadow: 0 4px 4px rgba(0,0,0,.25),4px 4px 40px rgba(255,0,0,.9);

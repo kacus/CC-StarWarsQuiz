@@ -49,7 +49,7 @@ export default class QuizController {
 
     async generateQuestion() {
         // if user answer all questions before time left
-        if(this.questions.length === this.validIds.length){
+        if (this.questions.length === this.validIds.length) {
             this.timeLeft = 0;
             return;
         }
@@ -65,7 +65,7 @@ export default class QuizController {
         this.currentQuestion = new QuestionModel(this.quizType, generatedId);
         await this.currentQuestion.fetchData(this.api_url, this.validIds);
         this.questions.push(this.currentQuestion);
-        
+
         // display question
         const questionView = new QuestionView(this.questionContainer, this.handleAnswer.bind(this), this.quizType);
         questionView.display(this.currentQuestion.getAnswers());
@@ -86,13 +86,27 @@ export default class QuizController {
         const gameOverView = new GameOverView(this.root, this.getNameHandler.bind(this), this.score, this.maxPoints);
         this.root.innerHTML = "";
         gameOverView.display();
-        
+
     }
 
-    getNameHandler(name){
+    getNameHandler(name) {
+        console.log(name);
         this.userName = name;
         this.gameOverHandler();
         console.log(`Good job, ${this.userName}! Your score ${this.score}/${this.maxPoints}`);
         //TODO: save results in memory
+        const currentResult = [name, this.score, this.maxPoints];
+        const HighScores = !JSON.parse(localStorage.getItem('HighScores'))
+            ? []
+            : JSON.parse(localStorage.getItem('HighScores'));
+
+        const PlaceOfResult = HighScores.findIndex(
+            (res) => currentResult[1] > res[1],
+        );
+        PlaceOfResult === -1
+            ? HighScores.push(currentResult)
+            : HighScores.splice(PlaceOfResult, 0, currentResult);
+        localStorage.setItem('HighScores', JSON.stringify(HighScores));
+        console.log(localStorage.getItem('HighScores'));
     }
 }

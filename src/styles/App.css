@@ -279,27 +279,7 @@ body {
     justify-content: center;
 }
 
-@media (max-width:800px) {
-    .imgLightsaberView {
-        width: 8rem;
-        transform: translateX(-1.5rem);
-    }
 
-    .lightsaberWraper {
-        height: 1.4rem;
-    }
-}
-
-@media (max-width:500px) {
-    .imgLightsaberView {
-        width: 6rem;
-        transform: translateX(-1.5rem);
-    }
-
-    .lightsaberWraper {
-        height: 1.1rem;
-    }
-}
 
 
 .quiz__holder {
@@ -356,6 +336,7 @@ body {
     background-color: #fff;
     text-align: center;
     /* align-self: end; */
+    box-sizing: border-box;
 
 
 }
@@ -386,11 +367,36 @@ body {
 
     box-shadow: 0px 0px 14px 0px #FF0000;
 }
+@media (max-width:800px) {
+    .imgLightsaberView {
+        width: 8rem;
+        transform: translateX(-1.5rem);
+    }
+
+    .lightsaberWraper {
+        height: 1.4rem;
+    }
+}
+
+@media (max-width:500px) {
+    .imgLightsaberView {
+        width: 6rem;
+        transform: translateX(-1.5rem);
+    }
+
+    .lightsaberWraper {
+        height: 1.1rem;
+    }
+
+}
 
 @media (max-width:700px) {
     .images__holder {
         justify-content: space-between;
         width: 50vw;
+    }
+    .answers__list{
+        grid-template-columns: 1fr;
     }
 
 }

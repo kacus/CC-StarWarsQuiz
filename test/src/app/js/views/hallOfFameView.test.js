@@ -25,7 +25,7 @@ describe('How HallOfFame is being rendered based on different local.storage valu
     document.body.innerHTML = `<div id="swquiz-app"></div>`;
 
     localStorage.setItem(
-      'highScores',
+      'HighScores',
       JSON.stringify([
         ['p1', 10, 20],
         ['p2', 9, 22],
@@ -34,10 +34,11 @@ describe('How HallOfFame is being rendered based on different local.storage valu
         ['p4', 6, 22],
       ]),
     );
+
     hof.display();
 
     const displayedTable =
-      '<div class="hof__wrapper"><table class="hof__table"><thead class="hof__table-heading"></thead><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr></table></div>';
+      '<div class="hof__wrapper"><table class="hof__table"><thead class="hof__table-heading"></thead><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell" colspan="2"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr><tr class="hof__table-row"><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td><td class="hof__table-cell"></td></tr></table></div>';
 
     expect(newParent.innerHTML).toBe(displayedTable);
   });

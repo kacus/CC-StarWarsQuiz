@@ -277,6 +277,7 @@ body {
     justify-content: center;
 }
 
+
 .quiz__holder {
     margin-left: auto;
     margin-right: auto;
@@ -332,6 +333,7 @@ body {
     background-color: #fff;
     text-align: center;
     /* align-self: end; */
+    box-sizing: border-box;
 
 
 }
@@ -361,6 +363,28 @@ body {
 .btn:hover {
 
     box-shadow: 0px 0px 14px 0px #FF0000;
+}
+@media (max-width:800px) {
+    .imgLightsaberView {
+        width: 8rem;
+        transform: translateX(-1.5rem);
+    }
+
+    .lightsaberWraper {
+        height: 1.4rem;
+    }
+}
+
+@media (max-width:500px) {
+    .imgLightsaberView {
+        width: 6rem;
+        transform: translateX(-1.5rem);
+    }
+
+    .lightsaberWraper {
+        height: 1.1rem;
+    }
+
 }
 
 /* style for HalOfFame */
@@ -534,6 +558,9 @@ tr .hof__table-cell:nth-of-type(4) {
         padding: 1rem;
         display: block;
         font-size: 2rem;
+    }
+    .answers__list{
+        grid-template-columns: 1fr;
     }
 
 }

@@ -53,7 +53,6 @@ export default class MenuView{
         const questionImg = this.createElement('div', 'question__image');
         const shortDesc = this.createElement('div', 'shortDesc');
         shortDesc.innerHTML = this.categories[0].shortDesc;
-        console.log(shortDesc);
         const longDesc = this.createElement('div', 'longDesc');
         longDesc.innerHTML = this.categories[0].longDesc;
 

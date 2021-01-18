@@ -90,11 +90,9 @@ export default class QuizController {
     }
 
     getNameHandler(name) {
-        console.log(name);
         this.userName = name;
         this.gameOverHandler();
-        console.log(`Good job, ${this.userName}! Your score ${this.score}/${this.maxPoints}`);
-        //TODO: save results in memory
+
         const currentResult = [name, this.score, this.maxPoints];
         const HighScores = !JSON.parse(localStorage.getItem('HighScores'))
             ? []
@@ -107,6 +105,5 @@ export default class QuizController {
             ? HighScores.push(currentResult)
             : HighScores.splice(PlaceOfResult, 0, currentResult);
         localStorage.setItem('HighScores', JSON.stringify(HighScores));
-        console.log(localStorage.getItem('HighScores'));
     }
 }

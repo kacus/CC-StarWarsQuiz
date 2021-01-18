@@ -34,7 +34,7 @@ export default class GameOverView {
         const gameOverSubheader = this.createElement('h5', 'subheader');
         gameOverSubheader.innerText = `The force is strong in you young Padawan! During 1 minute you have answered ${this.correctAnswers} / ${this.totalAnswers} questions.`
         const yodaImage = this.createElement('img', 'yoda__image');
-        yodaImage.src = `./static/assets/ui/MasterYodaRIght.png`;
+        yodaImage.src = `./static/assets/ui/MasterYodaRight.png`;
         const formHolder = this.createElement('div', 'form__holder');
         const provideNameText = this.createElement('h5', 'provideName__text');
         provideNameText.innerText = "Please fill your name in order to receive eternal glory in whole Galaxy!"

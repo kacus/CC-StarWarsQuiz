@@ -45,7 +45,7 @@ export default class QuestionView {
 
     const question = this.createElement('div', 'question');
 
-    const questionImage = this.createElement('img', 'question__image');
+    const questionImage = this.createElement('img', 'question__picture');
     questionImage.src = `./static/assets/img/modes/${this.type}/${answers[0][0]}.jpg`;
 
     const questionContainer = this.createElement('div', 'question__container');

@@ -2,31 +2,23 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-size: 62.5%;
 }
-
 body {
     font-size: 1.6rem;
     background-image: url("../static/assets/ui/QuizBackground.png");
 }
-
-
 .form__container {
     display: flex;
     width: 80%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    /* margin-top: 150px; */
     border-radius: 5px;
-    /* box-shadow: 0px 0px 14px 0px #FF0000;  */
     color: #fff;
-    ;
     flex-wrap: wrap;
     font-weight: thin;
     justify-content: space-around;
     align-items: center;
-
 }
-
 .header__container {
     margin: 10px;
     display: flex;
@@ -36,13 +28,11 @@ body {
     text-align: center;
     font-size: 3rem;
 }
-
 .gameover__header {
     width: 100%;
     text-align: center;
     font-size: 3rem;
 }
-
 .form__holder {
     display: flex;
     justify-content: center;
@@ -51,16 +41,13 @@ body {
     margin: 10px;
     text-align: center;
     font-size: 3rem;
-
 }
-
 .providename__text {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
-
 .name__form {
     display: flex;
     align-items: center;
@@ -71,7 +58,6 @@ body {
     flex-wrap: wrap;
     margin: 10px;
 }
-
 .submit__button {
     background-color: #FF0000;
     color: white;
@@ -82,24 +68,20 @@ body {
     border: #FF0000 solid 0px;
     box-shadow: 0px 0px 10px 3px #FF0000;
 }
-
 .submit__button:hover {
     box-shadow: 0px 0px 10px 5px #FF0000;
     color: #FF0000;
     background-color: #FFF;
 }
-
 .insert__name {
     width: 212px;
     height: 26px;
     border: #BBB solid 2px;
     border-radius: 5px;
 }
-
 .insert__name:focus {
     box-shadow: 0px 0px 10px 3px #BBB;
 }
-
 .main{
     display: grid;
     grid-template-columns: 2fr 4fr;
@@ -118,7 +100,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 .logo__img{
     max-width: 60%;
@@ -129,8 +110,7 @@ body {
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    border-radius: 16px;
-    
+    border-radius: 16px;    
 }
 .menu {
     grid-area: menu;
@@ -143,7 +123,6 @@ body {
     box-shadow: 0 4px 4px rgba(0, 0, 0, .25), 4px 4px 40px rgba(255, 0, 0, .9);
     border-radius: 16px;
 }
-
 .menu__button {
     background-color: #fff;
     border: none;
@@ -152,13 +131,11 @@ body {
     font-size: 3rem;
     text-transform: capitalize;
 }
-
 .menu__button--clicked {
     padding-bottom: .5rem;
     border-bottom: 6px solid rgba(255, 0, 0, .5);
     border-radius: 4px;
 }
-
 .shortDesc{
     grid-area: shortDesc;
     display: flex;
@@ -171,7 +148,6 @@ body {
     box-shadow: 0 4px 4px rgba(0,0,0,.25),4px 4px 40px rgba(255,0,0,.9);
     border-radius: 16px;
 }
-
 .longDesc{
     grid-area: longDesc;
     display: flex;
@@ -198,7 +174,6 @@ body {
     border-radius: 16px;
     background-color: #FFF;
 }
-
 .start__button{
     position: relative;
     right: 0px;
@@ -223,7 +198,6 @@ body {
     margin-left: 2rem;
     margin-right: 1rem;
 }
-
 .lightsaberView {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -233,14 +207,12 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .lightsaberWraper {
     display: flex;
     align-items: center;
     height: 2vw;
     transform: translateX(-2rem);
 }
-
 .imgLightsaberView {
     display: grid;
     height: 100%;
@@ -251,7 +223,6 @@ body {
     background-position: center right;
     justify-self: right;
 }
-
 .lightsaber {
     width: 100%;
     height: 100%;
@@ -259,7 +230,6 @@ body {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 }
-
 .pathLightsaber {
     width: 100%;
     height: 100%;
@@ -267,7 +237,6 @@ body {
     box-shadow: 10px 5px 15px red, 10px -5px 15px red, inset 0 5px 4px rgba(255, 0, 0, .25);
     border-radius: 15px;
 }
-
 .countingDown {
     display: flex;
     font-weight: 800;
@@ -278,40 +247,40 @@ body {
     letter-spacing: .2rem;
     justify-content: center;
 }
-
-
-
-
 .quiz__holder {
     margin-left: auto;
     margin-right: auto;
     width: 90%;
-    min-height: 700px;
+    margin-top:0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
-
 .images__holder {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-items: center;
     width: 20vw;
     margin: 20px;
+    min-height: 650px;
 }
-
 .logo__sw {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
-
 .question__image {
     width: 100%;
-
     box-shadow: 0px 0px 14px 0px #FF0000;
-
 }
-
+.question__picture{
+    max-height:50vh;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
 .question__container {
     display: grid;
     grid-template-columns: 1fr;
@@ -322,12 +291,9 @@ body {
     width: 1000px;
     align-self: center;
 }
-
-
 .question__text {
     width: 100%;
     height: auto;
-    /* border: 1px solid black; */
     box-shadow: 0px 0px 14px 0px #FF0000;
     border-radius: 5px;
     align-self: center;
@@ -335,12 +301,8 @@ body {
     display: block;
     background-color: #fff;
     text-align: center;
-    /* align-self: end; */
     box-sizing: border-box;
-
-
 }
-
 .answers__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -351,7 +313,6 @@ body {
     justify-self: stretch;
     align-self: flex-end;
 }
-
 .btn {
     background: #fff;
     padding: 10px;
@@ -360,43 +321,87 @@ body {
     align-self: stretch;
     justify-self: stretch;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
-
 .btn:hover {
-
     box-shadow: 0px 0px 14px 0px #FF0000;
+}
+@media (max-width:500px) {
+    .imgLightsaberView {
+        width: 6rem;
+        transform: translateX(-1.5rem);
+    }
+    .lightsaberWraper {
+        height: 1.1rem;
+    }
+}
+@media (max-width:700px) {
+    .images__holder {
+        /* justify-content: space-between; */
+        width: 50vw;
+    }
+    .answers__list{
+        grid-template-columns: 1fr;
+    }
 }
 @media (max-width:800px) {
     .imgLightsaberView {
         width: 8rem;
         transform: translateX(-1.5rem);
     }
-
     .lightsaberWraper {
         height: 1.4rem;
     }
 }
-
-@media (max-width:500px) {
-    .imgLightsaberView {
-        width: 6rem;
-        transform: translateX(-1.5rem);
-    }
-
-    .lightsaberWraper {
-        height: 1.1rem;
-    }
-
-}
-
-@media (max-width:700px) {
+@media(max-width:900px){
     .images__holder {
-        justify-content: space-between;
+        min-height: 0px;
+    }
+    .main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 3fr 1fr;
+        grid-template-areas: "logo"
+                             "questImg"
+                             "menu"
+                             "shortDesc"
+                             "longDesc"
+                             "buttons";
+        min-height: 95vh;
+    }
+    .question__image{
+        min-height: 300px;
+        max-width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media(max-width:1000px){
+    .images__holder {
         width: 50vw;
     }
-    .answers__list{
-        grid-template-columns: 1fr;
-    }
-
 }
+@media (max-width: 1400px){
+    .yoda__image{
+        max-width: 20vw;
+        max-height: 40vh;
+    }
+    .header__container{
+        font-size:2rem;
+    }
+    .gameover__header{
+        font-size: 3rem;
+    }
+    .form__holder{
+        font-size: 2rem;
+    }
+    .images__holder {
+        min-height: 450px;
+    }  
+}
+@media(max-width:1600px){
+    .question__container {
+        width: 800px;
+    }
+}
+

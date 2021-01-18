@@ -37,7 +37,7 @@ export default class HallOfFameView {
       titles.forEach((title, index) => {
         const hofTableCell = this.createElement('td', 'hof__table-cell');
         hofTableRow.appendChild(hofTableCell);
-        index === 2 ? hofTableCell.colSpan = "2" : null;
+        // index === 2 ? hofTableCell.colSpan = "2" : null;
         hofTableCell.innerText = title;
       });
 

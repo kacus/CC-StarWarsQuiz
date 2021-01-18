@@ -6,6 +6,7 @@ body {
     font-size: 1.6rem;
     background-image: url("../static/assets/ui/QuizBackground.png");
 }
+
 .form__container {
     display: flex;
     width: 80%;
@@ -254,8 +255,9 @@ body {
     margin-top:0;
     display: flex;
     justify-content: space-around;
+
     align-items: center;
-    flex-wrap: wrap;
+    
 }
 .images__holder {
     display: flex;
@@ -286,9 +288,9 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 3fr;
     margin-top: 20%;
-    grid-gap: 100px;
-    margin: 20px;
-    width: 1000px;
+    grid-gap: 10rem;
+    margin: 2rem;
+    width: 100%;
     align-self: center;
 }
 .question__text {
@@ -297,7 +299,7 @@ body {
     box-shadow: 0px 0px 14px 0px #FF0000;
     border-radius: 5px;
     align-self: center;
-    padding: 10px;
+    padding: 1rem;
     display: block;
     background-color: #fff;
     text-align: center;
@@ -339,6 +341,179 @@ body {
     .images__holder {
         /* justify-content: space-between; */
         width: 50vw;
+
+
+/* style for HalOfFame */
+
+.hof__wraper {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, .25), 4px 4px 40px rgba(3, 3, 3, 0.9);
+    padding: 1rem;
+    color: rgb(241, 2, 2);
+}
+
+table {
+    box-shadow: 0 0 20px 10px red;
+    border: 2px solid black;
+    width: 50%;
+}
+
+table, th, td {
+    /* align: center; */
+    background-color: #fff;
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    table-layout: auto;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+
+tr:nth-of-type(1) {
+    font-weight: bolder;
+    padding-right: 1rem !important;
+}
+
+tr:nth-of-type(1) .hof__table-cell:nth-of-type(3) {
+    text-align: center;
+}
+
+
+tr .hof__table-cell:nth-of-type(3) {
+    text-align: right; 
+}
+
+tr .hof__table-cell:nth-of-type(4) {
+    text-align: left;
+    padding-left: 0;
+    margin-left: 0;
+    white-space: nowrap;
+}
+
+@media (max-width:800px) {
+    .imgLightsaberView {
+        width: 8rem;
+        transform: translateX(-1.5rem);
+    }
+
+    .lightsaberWraper {
+        height: 1.4rem;
+    }
+}
+
+
+@media (max-width:500px) {
+
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 0;
+        row-gap: 1.5rem;
+        grid-template-areas:
+                             "menu"
+                             "shortDesc"
+                             "longDesc"
+                             ". buttons";
+        padding: 0.2rem;
+        width: 100%;
+    }
+    
+
+    .menu {
+        flex-direction: column;
+        justify-content: space-around;
+        height: auto;
+    }
+    
+    .menu__button {
+        font-size: 3rem;
+        margin: .5rem;
+    }
+    
+    .menu__button--clicked {
+        padding-bottom: .5rem;
+        border-bottom: 6px solid rgba(255, 0, 0, .5);
+        border-radius: 4px;
+    }
+    
+    .shortDesc{
+        text-align: center;
+        font-size: 2rem;
+    }
+    
+    .longDesc{
+        display: flex;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+
+    .imgLightsaberView {
+        width: 6rem;
+        transform: translateX(-1.5rem);
+    }
+
+    .lightsaberWraper {
+        height: 1.1rem;
+    }
+
+    .quiz__holder {
+        width: 95%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        min-height: 50px;
+        padding: 3%;
+            
+    }
+
+    .images__holder {
+        width: 50%;
+        justify-self: center;
+    }
+    
+    .question__container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-gap: 1rem;
+        margin: auto;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .answers__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3rem;
+        row-gap: 3rem;
+        margin-top: auto;
+        margin-bottom: auto;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .answers__list button {
+        font-size: 2rem;
+    }
+
+    .question__text {
+        width: 80%;
+        align-self: center;
+        justify-self: center;
+        padding: 1rem;
+        display: block;
+        font-size: 2rem;
     }
     .answers__list{
         grid-template-columns: 1fr;

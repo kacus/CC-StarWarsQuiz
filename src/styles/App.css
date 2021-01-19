@@ -296,6 +296,7 @@ body {
     align-items: center;
     width: 20vw;
     margin: 20px;
+    max-height: 400px;
 }
 
 .logo__sw {
@@ -315,7 +316,8 @@ body {
     margin-top: 20%;
     grid-gap: 10rem;
     margin: 2rem;
-    width: 100%;
+    /* width: 100%; */
+    width: 800px;
     align-self: center;
 }
 
@@ -361,6 +363,22 @@ body {
 .btn:hover {
 
     box-shadow: 0px 0px 14px 0px #FF0000;
+}
+
+@media (max-width:500px) {
+    .imgLightsaberView {
+        width: 6rem;
+        transform: translateX(-1.5rem);
+    }
+    .lightsaberWraper {
+        height: 1.1rem;
+    }
+}
+
+@media (max-width:700px) {
+    .images__holder {
+        width: 50vw;
+    }
 }
 
 /* style for HalOfFame */
@@ -546,4 +564,86 @@ tr .hof__table-cell:nth-of-type(4) {
         font-size: 2rem;
     }
 
+    .answers__list{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width:800px) {
+    .imgLightsaberView {
+        width: 8rem;
+        transform: translateX(-1.5rem);
+    }
+    .lightsaberWraper {
+        height: 1.4rem;
+    }
+}
+@media(max-width:900px){
+    .images__holder {
+        min-height: 0px;
+    }
+    .main{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 3fr 1fr;
+        grid-template-areas: "logo"
+                             "questImg"
+                             "menu"
+                             "shortDesc"
+                             "longDesc"
+                             "buttons";
+        min-height: 95vh;
+    }
+    .question__image{
+        min-height: 300px;
+        max-width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media(max-width:1000px){
+    .images__holder {
+        width: 40vw;
+        
+    }
+
+}
+@media (max-width: 1400px){
+    .yoda__image{
+        max-width: 20vw;
+        max-height: 40vh;
+    }
+    .header__container{
+        font-size:2rem;
+    }
+    .gameover__header{
+        font-size: 3rem;
+    }
+    .form__holder{
+        font-size: 2rem;
+    }
+    .images__holder {
+        min-height: 450px;
+    }  
+}
+@media (min-width: 1200px) and (max-width: 1600px){
+    .quiz__holder {
+        max-height: 600px;
+        
+    }
+    /* .images__holder {
+        align-items: flex-start;
+        max-height: 500px;
+    } */
+    .question__picture{
+        max-height:45vh;
+    }
+    .logo__sw {
+        max-width: 100%;
+    }
+
+}
+@media (min-width: 1600px){
+    .images__holder{
+        min-height: 850px;
+    }
 }

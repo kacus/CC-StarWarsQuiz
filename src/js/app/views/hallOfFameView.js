@@ -1,3 +1,5 @@
+import MenuView from '../views/typeMenuView.js'
+
 export default class HallOfFameView {
   constructor(parent) {
     this.parent = parent;
@@ -63,5 +65,15 @@ export default class HallOfFameView {
       //create 'no results to show' display
       hofWrapper.appendChild(noResultsHeading);
     }
+
+    const backButton = this.createElement('button', 'back__button');
+    backButton.innerText = 'Try yourself!';
+    backButton.addEventListener('click', () => {
+      this.parent.innerHTML = "";
+      const back = new MenuView(this.parent)
+      back.display()
+    });
+
+    hofWrapper.appendChild(backButton);
   }
 }

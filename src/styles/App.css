@@ -383,11 +383,28 @@ body {
 
 /* style for HalOfFame */
 
-.hof__wraper {
+.hof__wrapper {
     display: flex;
     align-items: center;
     align-content: center;
     margin: auto;
+    flex-direction: column;
+}
+
+.back__button {
+    font-style: normal;
+    font-weight: 600;
+    width: 30%;
+    font-size: 2rem;
+    text-transform: capitalize;
+    border-radius: 16px;
+    background-color: rgba(255,0,0,.9);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-self: center;
+    margin-top: 3rem;
+    padding: 1rem;
 }
 
 caption {
@@ -491,6 +508,7 @@ tr .hof__table-cell:nth-of-type(4) {
         border-bottom: 6px solid rgba(255, 0, 0, .5);
         border-radius: 4px;
     }
+
     
     .shortDesc{
         text-align: center;

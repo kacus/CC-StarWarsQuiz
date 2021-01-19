@@ -254,6 +254,7 @@ body {
     width: 90%;
     margin-top:0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 
     align-items: center;
@@ -266,7 +267,8 @@ body {
     justify-items: center;
     width: 20vw;
     margin: 20px;
-    min-height: 650px;
+    /* min-height: 650px; */
+    max-height: 400px;
 }
 .logo__sw {
     width: 100%;
@@ -290,7 +292,8 @@ body {
     margin-top: 20%;
     grid-gap: 10rem;
     margin: 2rem;
-    width: 100%;
+    /* width: 100%; */
+    width: 800px;
     align-self: center;
 }
 .question__text {
@@ -343,6 +346,9 @@ body {
         width: 50vw;
     }
 }
+
+
+
 /* style for HalOfFame */
 
 .hof__wraper {
@@ -553,8 +559,10 @@ tr .hof__table-cell:nth-of-type(4) {
 }
 @media(max-width:1000px){
     .images__holder {
-        width: 50vw;
+        width: 40vw;
+        
     }
+
 }
 @media (max-width: 1400px){
     .yoda__image{
@@ -574,9 +582,25 @@ tr .hof__table-cell:nth-of-type(4) {
         min-height: 450px;
     }  
 }
-@media(max-width:1600px){
-    .question__container {
-        width: 800px;
+@media (min-width: 1200px) and (max-width: 1600px){
+    .quiz__holder {
+        max-height: 600px;
+        
+    }
+    /* .images__holder {
+        align-items: flex-start;
+        max-height: 500px;
+    } */
+    .question__picture{
+        max-height:45vh;
+    }
+    .logo__sw {
+        max-width: 100%;
+    }
+
+}
+@media (min-width: 1600px){
+    .images__holder{
+        min-height: 850px;
     }
 }
-

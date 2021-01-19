@@ -4,7 +4,7 @@
 
 https://kacus.github.io/CC-StarWarsQuiz/
 
-### Project description
+##### Project description
 
 Project made as part of a javascript task. The idea was to create a simple game - a quiz based on data downloaded from the Star Wars API.
 There are three categories to choose from: people, vehicles, and spaceships. In the game one needs to correctly identify what the picture presents. There are four answers to choose from, randomly selected from the database. The time to complete the task is 2 minutes. After this time, we get the result in the form of the sum of all puzzles that we have approached, as well as the number of correct answers. We also have the option to save our score, which will be stored in the Hall of Fame, which we can access from the main menu.

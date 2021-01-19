@@ -70,8 +70,7 @@ export default class HallOfFameView {
     backButton.innerText = 'Try yourself!';
     backButton.addEventListener('click', () => {
       this.parent.innerHTML = "";
-      const back = new MenuView(this.parent)
-      back.display()
+      location.reload()
     });
 
     hofWrapper.appendChild(backButton);
